@@ -71,7 +71,7 @@ augroup END
 " CtrlP
 "
 let g:ctrlp_custom_ignore='node_modules\|git'
-
+let g:ctrlp_working_path_mode = 0             "Prevent returning to original working directory after change with  :CtrlPDir
 "
 " greplace.vim
 "
@@ -121,6 +121,12 @@ let g:UltiSnipsSnippetsDir = $HOME . "/.vim/UltiSnips"
 autocmd BufNewFile,BufRead *.blade.php setlocal ft=html.blade
 
 "
+" CTAGS
+"
+nmap <Leader>f :tag<space>
+
+
+"
 " MultiCursors
 "
 let g:multi_cursor_use_default_mapping=0
@@ -131,7 +137,6 @@ let g:multi_cursor_select_all_word_key = '<A-n>'
 let g:multi_cursor_start_key           = 'g<C-n>'
 let g:multi_cursor_select_all_key      = 'g<A-n>'
 let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-b>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
@@ -198,6 +203,9 @@ function! AddDependency()
 endfunction
 nmap ,2  :call AddDependency()<cr>
 
+"=============ForPhpUnit====================
+
+nmap <leader>rt :!phpunit %<cr>
 
 "============LaravelSpecifics===============
 
@@ -215,12 +223,13 @@ set backspace=indent,eol,start       "Make backspace play nicely
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
-
 set number
 set relativenumber
 " Enable folding with the spacebar
 nnoremap <space> za
 let g:SimplyFold_docstring_preview=1
+
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 inoremap jk <esc>
 inoremap kj <esc>
