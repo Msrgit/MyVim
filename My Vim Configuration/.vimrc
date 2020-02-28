@@ -1,44 +1,14 @@
-set nocompatible              " required
+set nocompatible                            "Required
 
 so ~/.vim/plugins.vim
 
 syntax enable
 
-colorscheme industry                 "Set the colorscheme
 
-let mapleader=","                  "Change default map command leader to ','
+let mapleader=","                           "Change default map command leader to ','
+set backspace=indent,eol,start              "Make backspace play nicely
 
-"============SplitManagement==============
-" split defaults
-set splitbelow
-set splitright
-
-" split navigations
-nmap <C-J> <C-W><C-J>
-nmap <C-K> <C-W><C-K>
-nmap <C-L> <C-W><C-L>
-nmap <C-H> <C-W><C-H>
-
-
-
-
-
-"============Visuals==============
-set t_CO=256
-
-
-
-
-
-"============Search==============
-set hlsearch
-set incsearch
-
-
-
-
-
-"============Mappings==============
+"============Mappings=============="
 
 "Make it easy to edit the .vimrc file
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
@@ -54,17 +24,54 @@ nmap <Leader>tn :NERDTreeToggle<cr>
 
 
 
+
+
+"============Split Management==============
+" split defaults
+set splitbelow
+set splitright
+
+" split navigations
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-L> <C-W><C-L>
+nmap <C-H> <C-W><C-H>
+
+
+
+
+
+"============Visuals==============
+colorscheme  atom-dark-256                  "Set the colorscheme
+set t_CO=256
+
+
+
+
+
+"============Search==============
+set hlsearch
+set incsearch
+
+
+
+
+
 "============AutoCommands==========
 
 augroup fred
-				autocmd!
-				"Source .vimrc when we write it
-				autocmd BufWritePost .vimrc source %
-
+   "Clear out the content of this group
+	autocmd!                                				
+	autocmd BufWritePost .vimrc source %    "Source .vimrc when we write it
+	autocmd VimEnter * NERDTree	            "Start NERDTree when vim starts
 augroup END
 
-				"Start NERDTree when vim starts
-				"autocmd VimEnter * NERDTree
+
+
+
+
+
+
 
 "============Plugins==========
 "
@@ -111,10 +118,11 @@ function! IPhpExpandClass()
 "
 "UltiSnips
 "
-let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion=3
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:ycm_python_binary_path = 'python3'
 
 let g:UltiSnipsSnippetsDir = $HOME . "/.vim/UltiSnips"
 
@@ -218,7 +226,6 @@ nmap <Leader>pl :e ~/PiScreen/scripts/loop.sh<cr>
 
 
 
-set backspace=indent,eol,start       "Make backspace play nicely
 
 " Enable folding
 set foldmethod=indent
