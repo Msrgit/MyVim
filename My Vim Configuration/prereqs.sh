@@ -5,9 +5,11 @@ function dbum() {
     fi
 }
 sudo apt-get -y install ctags silversearcher-ag
-
 dbum ~/.vimrc
+
 cp .vimrc ~/.vimrc
 cp .ctags ~/.ctags
-cp plugins.vim ~/.vim/plugins.vim
+mkdir -p ~/.vim && cp plugins.vim ~/.vim/plugins.vim
+mkdir -p ~/.vim/colors 
+mkdir -p ~/.vim/bundle
 
