@@ -12,10 +12,14 @@ set backspace=indent,eol,start              "Make backspace play nicely
 
 "Make it easy to edit the .vimrc file
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
-nmap <Leader>es :e ~/.vim/snippets/
+nmap <Leader>es :tabedit ~/.vim/snippets/<cr>
+nmap <leader>ep :tabedit ~/.vim/plugins.vim<cr>
 
 "Remove search highlighting with comma space
 nmap <Leader><space> :nohlsearch<cr>
+
+"Run the current file
+nmap <Leader>r :!%:p<cr>
 
 "Toggle NERDTree
 nmap <Leader>tn :NERDTreeToggle<cr>
@@ -206,14 +210,14 @@ function! AddDependency()
     exec 'normal gg/construct^M:H^Mf)i, ' . typehint . ' $' . dependency . '^[/}^>O$this->^[a' . dependency . ' = $' . dependency . ';^[?{^MkOprotected $' . dependency . ';^M^[?{^MOuse ' . namespace . ';^M^['
 
     " Remove opening comma if there is only one dependency
-    exec 'normal :%s/(, /(/g
-'
+    exec 'normal :%s/(, /(/g'
+
 endfunction
 nmap ,2  :call AddDependency()<cr>
 
 "=============ForPhpUnit====================
 
-nmap <leader>rt :!phpunit %<cr>
+nmap <leader>rt :!clear && phpunit % --debug<cr>
 
 "============LaravelSpecifics===============
 
@@ -223,9 +227,6 @@ nmap <leader>rt :!phpunit %<cr>
 "============PiScreenSpecifics=============
 nmap <Leader>pg :e ~/PiScreen/scripts/go.sh<cr>
 nmap <Leader>pl :e ~/PiScreen/scripts/loop.sh<cr>
-
-
-
 
 " Enable folding
 set foldmethod=indent

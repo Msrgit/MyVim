@@ -33,9 +33,14 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors' **Deprecated**
+Plugin 'mg979/vim-visual-multi'
 Plugin 'janko-m/vim-test'
-'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'jvanja/vim-bootstrap4-snippets'
+Plugin 'tpope/vim-repeat'
+
 
 
 " All of your Plugins must be added before the following line
