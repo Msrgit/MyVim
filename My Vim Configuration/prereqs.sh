@@ -12,4 +12,4 @@ cp .ctags ~/.ctags
 mkdir -p ~/.vim && cp plugins.vim ~/.vim/plugins.vim
 mkdir -p ~/.vim/colors 
 mkdir -p ~/.vim/bundle
-
+cp ./colors/* ~/.vim/colors
