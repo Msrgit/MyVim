@@ -24,7 +24,8 @@ nmap <Leader>r :!%:p<cr>
 "Toggle NERDTree
 nmap <Leader>tn :NERDTreeToggle<cr>
 
-
+"Save to a readonly file
+nmap <Leader>sw :w ! sudo tee %
 
 
 
