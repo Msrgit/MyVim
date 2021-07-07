@@ -9,10 +9,11 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 dbum ~/.vimrc
-
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp .vimrc ~/.vimrc
 cp .ctags ~/.ctags
 mkdir -p ~/.vim && cp plugins.vim ~/.vim/plugins.vim
 mkdir -p ~/.vim/colors 
 mkdir -p ~/.vim/bundle
 cp ./colors/* ~/.vim/colors
+vim -c PluginInstall
