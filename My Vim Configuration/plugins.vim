@@ -40,6 +40,9 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'jvanja/vim-bootstrap4-snippets'
 Plugin 'tpope/vim-repeat'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'neoclide/coc.nvim'
 
 
 
